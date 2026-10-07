@@ -77,7 +77,17 @@ select{width:100%;background:var(--bg);border:1.5px solid var(--line);border-rad
 .banda{position:absolute;left:8px;right:8px;top:60px;height:40px;border-top:2px solid var(--acc);border-bottom:2px solid var(--acc);pointer-events:none}
 .sep,.un{font:700 22px "Barlow Condensed",sans-serif}.un{color:var(--mute);font-size:18px}
 .btn:disabled{opacity:.45;cursor:default}
-.toast{position:fixed;left:50%;bottom:calc(20px + env(safe-area-inset-bottom,0px));transform:translateX(-50%);background:var(--ink);color:var(--bg);padding:10px 16px;border-radius:999px;font-weight:600;font-size:14px;z-index:60;max-width:90%;text-align:center}.toast[hidden]{display:none}
+.toast{position:fixed;left:50%;top:calc(16px + env(safe-area-inset-top,0px));transform:translateX(-50%);background:var(--ink);color:var(--bg);padding:10px 16px;border-radius:999px;font-weight:600;font-size:14px;z-index:60;max-width:90%;text-align:center}.toast[hidden]{display:none}
+.rest{position:fixed;left:50%;transform:translateX(-50%);bottom:calc(12px + env(safe-area-inset-bottom,0px));width:calc(100% - 24px);max-width:520px;z-index:40;display:flex;align-items:center;gap:8px;background:var(--card);border:2px solid var(--acc);border-radius:16px;padding:10px 12px 14px;box-shadow:0 6px 24px rgba(0,0,0,.25)}.rest[hidden]{display:none}
+.rest .btn{padding:8px 10px;flex:none;min-width:48px}.rt{flex:1;text-align:center;line-height:1.05}.rl{font-size:12px;color:var(--mute);font-weight:600}.rn{font:700 34px "Barlow Condensed",sans-serif;font-variant-numeric:tabular-nums}
+.rbar{position:absolute;left:12px;right:12px;bottom:5px;height:4px;border-radius:4px;background:var(--line);overflow:hidden}.rbar b{display:block;height:100%;width:100%;background:var(--ok)}
+.rest.fin{border-color:var(--ok)}.rest.fin .rn{color:var(--ok)}
+body.conrest main{padding-bottom:120px}
+.grip{flex:none;border:0;background:none;color:var(--mute);padding:6px 4px;margin:-4px 0 0 -6px;touch-action:none;cursor:grab;border-radius:8px;align-self:flex-start}
+.ex.arr{box-shadow:0 8px 24px rgba(0,0,0,.28);border-color:var(--acc);position:relative;z-index:5;user-select:none;-webkit-user-select:none}
+.nota{font-size:13px;color:var(--mute);margin-top:4px;font-style:italic}
+#cpanel{margin:8px 0}.cdias{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:10px}
+.cd{border:1.5px solid var(--line);background:var(--bg);border-radius:10px;padding:8px 12px;font-weight:600;min-width:44px}.cd[aria-pressed="true"]{background:var(--acc);color:var(--accink);border-color:var(--acc)}.cd:disabled{opacity:.35}
 .empty{border:1.5px dashed var(--line);border-radius:14px;padding:22px 16px;text-align:center;color:var(--mute);margin-bottom:10px}
 form{background:var(--card);border:1.5px solid var(--line);border-radius:14px;padding:14px;margin-top:16px}
 form h3{margin:0 0 10px;font:700 20px "Barlow Condensed",sans-serif}
@@ -106,6 +116,32 @@ input{width:100%;background:var(--bg);border:1.5px solid var(--line);border-radi
   .set{width:50px;height:50px}
 }
 @media (prefers-reduced-motion:reduce){.bar b{transition:none}}
+/* ---- Ajustes de diseño ---- */
+header{flex-wrap:nowrap;align-items:center;margin-bottom:12px}
+header .sub{font-size:13px;line-height:1.3}
+.hb .ico{width:40px;height:40px;border-color:transparent;background:var(--card)}.hb .ico svg{width:20px;height:20px}
+.mes{margin-top:4px}.mtxt h2{font-size:26px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.mtxt .sub{font-size:13px}
+.mes .ico{width:40px;height:40px;font-size:22px}.mes #mhoy{padding:7px 12px;font-size:14px}
+.mes + .bar{height:4px;margin:8px 0 12px}
+.sem{padding:5px 12px;font-size:15px}.sem small{font-size:10.5px}
+.day{box-shadow:0 1px 0 var(--line)}
+.focusrow h2{font-size:26px}
+#copiar,#reset{font-size:14px;padding:7px 11px;border-color:transparent;background:var(--card)}
+#reset.pri{background:var(--acc);color:var(--accink)}
+.focusrow select{padding:8px 10px}
+.ex{border-radius:16px;box-shadow:0 1px 0 var(--line)}
+.ex.done{background:color-mix(in srgb,var(--ok) 12%,var(--card))}
+.exname{font-size:17px}
+.sets{gap:10px}
+.rrow{grid-column:1/-1;display:grid;grid-template-columns:3fr 2fr;gap:10px}.rb{grid-column:auto}
+.col{width:52px;height:140px;padding:50px 0}.rueda{height:140px;gap:2px}.banda{top:50px}.it.on{font-size:28px}
+#pform>.prow{position:sticky;bottom:calc(-18px - env(safe-area-inset-bottom,0px));background:var(--card);padding:12px 0 4px;margin-top:8px}
+.gate{align-items:center;background:var(--bg);z-index:70;padding:16px;overflow:auto}
+.gform{width:100%;max-width:400px;margin:auto}.gform h1{font-size:40px;margin-bottom:6px}.gform label{display:block;margin-top:12px}.gform label[hidden],.gform div[hidden]{display:none}
+.gform .full{margin-top:14px;padding:13px;font-size:17px}
+.linkb{background:none;border:0;color:var(--acc);text-decoration:underline;padding:12px 0 4px;font-weight:600}
+.day{padding:7px 0 9px}
+@media (min-width:600px){.day{padding:10px 0 12px}}
 </style>
 </head>
 <body>
@@ -128,11 +164,17 @@ input{width:100%;background:var(--bg);border:1.5px solid var(--line);border-radi
   <div class="layout">
   <section class="dia" aria-label="Rutina del día">
   <div class="focusrow">
-    <h2 id="titulo"></h2>
+    <h2 id="titulo" style="flex:1"></h2><button class="btn" id="copiar" title="Copiar los ejercicios de este día a otros días">Copiar a…</button>
   </div>
   <div class="focusrow">
     <select id="foco" aria-label="Enfoque del día"></select>
     <button class="btn" id="reset" title="Borrar todos los ejercicios y series de este día">Reiniciar día</button>
+  </div>
+  <div class="aviso" id="cpanel" hidden role="group" aria-label="Copiar día">
+    <p>Copiar los ejercicios de este día a:</p>
+    <div class="cdias" id="cdias"></div>
+    <p class="sub" id="cinfo" style="margin:0 0 10px;font-weight:500"></p>
+    <div class="row"><button class="btn" id="cno">Cancelar</button><button class="btn pri" id="csi">Copiar</button></div>
   </div>
   <div class="bar" aria-hidden="true"><b id="prog"></b></div>
 
@@ -151,6 +193,7 @@ input{width:100%;background:var(--bg);border:1.5px solid var(--line);border-radi
       <label>Reps<input id="r" type="number" min="1" max="100" value="10" required></label>
       <label>Peso (kg)<input id="k" type="number" min="0" step="0.5" value="0"></label>
     </div>
+    <label style="margin-top:8px">Nota (opcional)<input id="nt" maxlength="80" placeholder="Ej. ajustar el asiento en el 4" autocomplete="off"></label>
     <button class="btn pri full" type="submit">Añadir al día</button>
   </form>
 
@@ -168,6 +211,40 @@ input{width:100%;background:var(--bg);border:1.5px solid var(--line);border-radi
   </aside>
   </div>
 </main>
+<div class="ov gate" id="gate" hidden role="dialog" aria-modal="true" aria-labelledby="gtit">
+  <form class="gform" id="gform" novalidate>
+    <h1 id="gtit"></h1>
+    <p class="sub" id="gsub"></p>
+    <label id="gnl">Nombre<input id="gn" maxlength="30" autocomplete="name"></label>
+    <label>Correo electrónico<input id="ge" type="email" inputmode="email" autocomplete="email"></label>
+    <label>Contraseña<input id="gp" type="password" autocomplete="current-password"></label>
+    <label id="gcl">Repetir contraseña<input id="gc" type="password" autocomplete="new-password"></label>
+    <p class="perr" id="gerr" role="alert"></p>
+    <button class="btn pri full" id="gok" type="submit"></button>
+    <div id="gol" hidden>
+      <button type="button" class="linkb" id="golv">¿Olvidaste tu contraseña?</button>
+      <div id="golt" hidden>
+        <div id="gloc">
+          <p class="sub">La cuenta se guarda solo en este dispositivo, por eso no se puede recuperar la contraseña. Si la olvidaste, la única opción es borrar la cuenta y empezar de nuevo (se pierden los datos guardados).</p>
+          <button type="button" class="btn" id="gborra" style="width:100%">Borrar cuenta y datos de este dispositivo</button>
+        </div>
+        <div id="gnub" hidden>
+          <p class="sub">Escribe tu correo arriba y te enviaremos un mensaje para crear una nueva contraseña.</p>
+          <button type="button" class="btn" id="greset" style="width:100%">Enviarme el correo</button>
+          <p class="sub" id="gmsg" role="status"></p>
+        </div>
+      </div>
+    </div>
+    <button type="button" class="linkb" id="gcambio" hidden></button>
+  </form>
+</div>
+<div class="rest" id="rest" hidden role="timer" aria-label="Temporizador de descanso">
+  <button class="btn" id="rmenos" aria-label="Restar 15 segundos">−15</button>
+  <div class="rt"><div class="rl" id="rl">Descanso</div><div class="rn" id="rn">0:00</div></div>
+  <button class="btn" id="rmas" aria-label="Sumar 15 segundos">+15</button>
+  <button class="btn pri" id="romitir">Omitir</button>
+  <i class="rbar"><b id="rb"></b></i>
+</div>
 <div class="toast" id="toast" role="status" aria-live="polite" hidden></div>
 <div class="ov" id="evo" hidden role="dialog" aria-modal="true" aria-labelledby="etit">
   <div class="hoja">
@@ -183,15 +260,18 @@ input{width:100%;background:var(--bg);border:1.5px solid var(--line);border-radi
       <label class="c2">Nombre (opcional)<input id="pn" maxlength="30" autocomplete="given-name"></label>
       <label>Edad (años)<input id="pe" type="number" inputmode="numeric" min="10" max="100" required></label>
       <label>Nivel<select id="pv"></select></label>
-      <div class="rb"><span class="lbl">Peso (desliza)</span><div id="rpw"></div></div>
-      <div class="rb"><span class="lbl">Altura (desliza)</span><div class="rueda" id="ra"><div class="rc"></div><span class="un">cm</span><i class="banda"></i></div></div>
+      <div class="rrow"><div class="rb"><span class="lbl">Peso (desliza)</span><div id="rpw"></div></div>
+      <div class="rb"><span class="lbl">Altura (desliza)</span><div class="rueda" id="ra"><div class="rc"></div><span class="un">cm</span><i class="banda"></i></div></div></div>
       <label class="c2">Objetivo<select id="po"></select></label>
+      <label class="c2">Descanso entre series (temporizador)<select id="pd"></select></label>
+      <div class="c2" id="cta"><p class="sub" id="cuenta" style="margin:0 0 8px"></p><div class="prow" style="margin:0"><button type="button" class="btn" id="salir">Cerrar sesión</button><button type="button" class="btn" id="borrar">Borrar cuenta y datos</button></div></div>
     </div>
     <p class="perr" id="perr" role="alert"></p>
     <div class="prow"><button type="button" class="btn" id="pno"></button><button type="submit" class="btn pri">Guardar</button></div>
   </form>
 </div>
 
+<script src="firebase-config.js"></script>
 <script>
 const DIAS=["Lun","Mar","Mié","Jue","Vie","Sáb","Dom"];
 const NOMBRES=["Lunes","Martes","Miércoles","Jueves","Viernes","Sábado","Domingo"];
@@ -218,9 +298,24 @@ const parse=t=>{const [y,m,d]=t.split("-").map(Number);return new Date(y,m-1,d)}
 const wd=d=>(d.getDay()+6)%7;
 const hoyD=new Date(), hoyIso=iso(hoyD);
 let sel=hoyIso, editId=null, pend=null;
-let st={dias:DIAS.map(()=>({foco:"Sin definir",ex:[]})),log:{},perfil:null,perfilVisto:false,pesos:{},hist:{}};
-try{const g=JSON.parse(localStorage.getItem(KEY)||"null");if(g&&g.dias&&g.dias.length===7){st.dias=g.dias;st.log=g.log||{};st.perfil=g.perfil||null;st.perfilVisto=!!g.perfilVisto;st.pesos=g.pesos||{};st.hist=g.hist||{};}}catch(e){}
-const guardar=()=>{try{localStorage.setItem(KEY,JSON.stringify({dias:st.dias,log:st.log,perfil:st.perfil,perfilVisto:st.perfilVisto,pesos:st.pesos,hist:st.hist}))}catch(e){}};
+const NUBE=!!(window.FIREBASE_CONFIG&&FIREBASE_CONFIG.apiKey&&FIREBASE_CONFIG.projectId);
+const vacio=()=>({dias:DIAS.map(()=>({foco:"Sin definir",ex:[]})),log:{},perfil:null,perfilVisto:false,pesos:{},hist:{},descanso:90,mod:0,owner:null});
+let st=vacio();
+try{const g=JSON.parse(localStorage.getItem(KEY)||"null");if(g&&g.dias&&g.dias.length===7){st.dias=g.dias;st.log=g.log||{};st.perfil=g.perfil||null;st.perfilVisto=!!g.perfilVisto;st.pesos=g.pesos||{};st.hist=g.hist||{};st.descanso=g.descanso??90;st.mod=g.mod||0;st.owner=g.owner||null;}}catch(e){}
+const CK="rutina-gym-cuenta",SK="rutina-gym-sesion";
+let cuenta=null,autenticado=false;
+try{cuenta=JSON.parse(localStorage.getItem(CK)||"null");autenticado=!!cuenta&&localStorage.getItem(SK)==="1"}catch(e){}
+const payloadJson=()=>JSON.stringify({dias:st.dias,log:st.log,perfil:st.perfil,perfilVisto:st.perfilVisto,pesos:st.pesos,hist:st.hist,descanso:st.descanso,nombre:(cuenta&&cuenta.nombre)||""});
+function persistir(){try{localStorage.setItem(KEY,JSON.stringify({dias:st.dias,log:st.log,perfil:st.perfil,perfilVisto:st.perfilVisto,pesos:st.pesos,hist:st.hist,descanso:st.descanso,mod:st.mod,owner:st.owner}))}catch(e){}}
+let ultimo=null,sinSubir=false,subT=null,nubeMsg="";
+const guardar=()=>{
+  if(!autenticado)return;
+  const j=payloadJson();
+  if(ultimo===null){ultimo=j;return}
+  if(j===ultimo)return;
+  ultimo=j;st.mod=Date.now();persistir();
+  if(NUBE)programarSubida();
+};
 const $=s=>document.querySelector(s);
 const esc=t=>String(t).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
 const planDe=k=>st.dias[wd(parse(k))];
@@ -241,7 +336,7 @@ function pintar(){
   $("#mes").textContent=MESES[m][0].toUpperCase()+MESES[m].slice(1)+" "+y;
   let plan=0,hechos=0;
   for(let d=1;d<=dim;d++){const q=iso(new Date(y,m,d));if(planDe(q).ex.length){plan++;if(progD(q)>=1)hechos++}}
-  $("#mresumen").textContent=plan?`${hechos} de ${plan} entrenamientos completados`:"Aún no tienes días planificados";
+  $("#mresumen").textContent=plan?`${hechos} de ${plan} completados`:"Sin días planificados";
   $("#mprog").style.width=plan?Math.round(hechos/plan*100)+"%":"0%";
   $("#semanas").innerHTML=sems.map((w,i)=>{
     const dd=dias7(w).filter(x=>x.getMonth()===m);
@@ -249,7 +344,7 @@ function pintar(){
   }).join("");
   $("#semana").innerHTML=dias7(sems[wi]).map((d,j)=>{
     const q=iso(d),p=planDe(q),f=p.foco==="Sin definir"?"":p.foco;
-    return `<button class="day${d.getMonth()!==m?" out":""}${q===hoyIso?" hoy":""}" data-d="${q}" aria-pressed="${q===sel}" aria-label="${NOMBRES[j]} ${d.getDate()}${f?", "+f:""}"><span class="dn">${DIAS[j]}</span><span class="dd">${d.getDate()}</span><small>${esc(f)}</small><i style="--p:${progD(q)}"></i></button>`;
+    return `<button class="day${d.getMonth()!==m?" out":""}${q===hoyIso?" hoy":""}" data-d="${q}" aria-pressed="${q===sel}" aria-label="${NOMBRES[j]} ${d.getDate()}${f?", "+f:""}"><span class="dn">${DIAS[j]}</span><span class="dd">${d.getDate()}</span><i style="--p:${progD(q)}"></i></button>`;
   }).join("");
   const dia=planDe(sel);
   $("#titulo").textContent=`${NOMBRES[k]} ${sd.getDate()}`+(sel===hoyIso?" · hoy":"");
@@ -267,19 +362,21 @@ function pintar(){
           <label>Reps<input name="r" type="number" min="1" max="100" required value="${e.r}"></label>
           <label>Peso (kg)<input name="k" type="number" min="0" step="0.5" value="${e.k}"></label>
         </div>
+        <label style="margin-top:8px">Nota (opcional)<input name="nota" maxlength="80" value="${esc(e.nota||"")}"></label>
         <div class="row"><button type="button" class="btn" data-cancel>Cancelar</button><button type="submit" class="btn pri">Guardar</button></div>
       </form>`;
       const mk=marks(sel,e),fin=mk.every(Boolean);
       return `<div class="ex ${fin?"done":""}" data-id="${e.id}">
-        <div class="exhead"><div><div class="exname">${esc(e.n)}</div><div class="meta">${e.s} × ${e.r}${e.k?` · ${e.k} kg`:""}</div></div>
+        <div class="exhead"><div style="display:flex;gap:6px;min-width:0">${dia.ex.length>1?`<button class="grip" aria-label="Mover ${esc(e.n)}: arrastra, o usa las flechas arriba y abajo"><svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor" aria-hidden="true"><circle cx="9" cy="6" r="1.8"/><circle cx="15" cy="6" r="1.8"/><circle cx="9" cy="12" r="1.8"/><circle cx="15" cy="12" r="1.8"/><circle cx="9" cy="18" r="1.8"/><circle cx="15" cy="18" r="1.8"/></svg></button>`:""}<div><div class="exname">${esc(e.n)}</div><div class="meta">${e.s} × ${e.r}${e.k?` · ${e.k} kg`:""}</div>${e.nota?`<div class="nota">${esc(e.nota)}</div>`:""}</div></div>
         <div class="xs"><button class="x" data-edit-btn="${e.id}" aria-label="Editar ${esc(e.n)}">✎</button><button class="x" data-del="${e.id}" aria-label="Quitar ${esc(e.n)}">×</button></div></div>
         <div class="sets">${mk.map((v,j)=>`<button class="set" data-id="${e.id}" data-j="${j}" aria-pressed="${v}" aria-label="Serie ${j+1} de ${e.s}">${j+1}</button>`).join("")}</div>
       </div>`;
     }).join("");
   }
   const tot=st.dias.filter(d=>d.ex.length).length;
-  $("#resumen").textContent=tot?`${tot} ${tot===1?"día planificado":"días planificados"} por semana`:"Planifica tu semana de entrenamiento";
+  $("#resumen").textContent=tot?`${tot} ${tot===1?"día planificado":"días planificados"} por semana`:"Planifica tu semana";
   if(resetT&&resetDia!==sel)cancelReset();
+  $("#copiar").disabled=!dia.ex.length;if(!$("#cpanel").hidden&&cDia!==sel)cerrarCopia();
   $("#reset").disabled=!dia.ex.length;
   $("#reset").title=dia.ex.length?"Borrar todos los ejercicios y series de este día":"Este día no tiene ejercicios";
   const pf=st.perfil;
@@ -310,7 +407,7 @@ function cancelReset(){clearTimeout(resetT);resetT=null;resetDia=null;const b=$(
 $("#reset").addEventListener("click",()=>{
   const b=$("#reset");if(b.disabled)return;
   if(!resetT){resetDia=sel;b.textContent="¿Seguro? Toca de nuevo";b.classList.add("pri");resetT=setTimeout(cancelReset,4000);return}
-  cancelReset();
+  cancelReset();cerrarDescanso();
   const dia=planDe(sel);dia.ex=[];dia.foco="Sin definir";
   delete st.log[sel];delete st.hist[sel];editId=null;pintar();
   avisar("Día reiniciado: ejercicios y series borrados");
@@ -323,23 +420,23 @@ $("#lista").addEventListener("click",e=>{
   const del=e.target.closest("[data-del]");
   if(del){dia.ex=dia.ex.filter(x=>x.id!==del.dataset.del);pintar();return}
   const b=e.target.closest(".set");
-  if(b){const x=dia.ex.find(x=>x.id===b.dataset.id);const a=marks(sel,x);a[+b.dataset.j]=!a[+b.dataset.j];(st.log[sel]=st.log[sel]||{})[x.id]=a;snap(sel,x);pintar()}
+  if(b){const x=dia.ex.find(x=>x.id===b.dataset.id);const a=marks(sel,x);const j=+b.dataset.j;a[j]=!a[j];(st.log[sel]=st.log[sel]||{})[x.id]=a;snap(sel,x);pintar();if(a[j]){if(progD(sel)>=1){cerrarDescanso();avisar("¡Entrenamiento del día completado!")}else iniciarDescanso()}}
 });
 $("#lista").addEventListener("submit",e=>{
   const f=e.target.closest("[data-edit]");if(!f)return;
   e.preventDefault();
   const x=planDe(sel).ex.find(x=>x.id===f.dataset.edit);if(!x)return;
   const n=f.n.value.trim();if(!n)return;
-  x.n=n;x.s=Math.max(1,Math.min(12,+f.s.value||x.s));x.r=+f.r.value||x.r;x.k=+f.k.value||0;snap(sel,x);
+  x.n=n;x.s=Math.max(1,Math.min(12,+f.s.value||x.s));x.r=+f.r.value||x.r;x.k=+f.k.value||0;x.nota=f.nota.value.trim();snap(sel,x);
   editId=null;pintar();
 });
 $("#nuevo").addEventListener("submit",e=>{
   e.preventDefault();
   const n=$("#n").value.trim();if(!n)return;
   const dia=planDe(sel);
-  dia.ex.push({id:uid(),n,s:Math.max(1,Math.min(12,+$("#s").value||3)),r:+$("#r").value||10,k:+$("#k").value||0});
+  dia.ex.push({id:uid(),n,s:Math.max(1,Math.min(12,+$("#s").value||3)),r:+$("#r").value||10,k:+$("#k").value||0,nota:$("#nt").value.trim()});
   if(dia.foco==="Sin definir")dia.foco="Cuerpo completo";
-  $("#n").value="";pintar();
+  $("#n").value="";$("#nt").value="";pintar();
 });
 function aplicar(t){
   st.dias=PLANTILLAS[t].map(([foco,ex])=>({foco,ex:ex.map(x=>({id:uid(),n:x.n,s:x.s,r:x.r,k:x.k}))}));
@@ -381,10 +478,10 @@ function abrirPerfil(cfg){
   modoCfg=cfg;const p=st.perfil||{};
   $("#ptitulo").textContent=cfg?"Configuración":"Cuéntanos sobre ti";
   $("#psub").textContent=cfg?"Edita tus datos cuando quieras. Se guardan solo en este dispositivo.":"Estos datos se guardan solo en tu dispositivo y puedes cambiarlos luego en configuración.";
-  $("#pn").value=p.nombre||"";$("#pe").value=p.edad||"";
+  $("#pn").value=p.nombre||(cuenta&&cuenta.nombre)||"";$("#pe").value=p.edad||"";
   $("#po").value=p.objetivo||OBJ[0];$("#pv").value=p.nivel||NIV[0];
   $("#pno").textContent=cfg?"Cancelar":"Omitir por ahora";
-  $("#perr").textContent="";$("#perfil").hidden=false;setPeso("rp",p.peso||70);ponerCol($("#ra .rc"),p.altura||170);$("#pn").focus();
+  $("#perr").textContent="";$("#perfil").hidden=false;setPeso("rp",p.peso||70);$("#pd").value=String(st.descanso);$("#cta").hidden=!cfg;lineaCuenta();ponerCol($("#ra .rc"),p.altura||170);$("#pn").focus();
 }
 function cerrarPerfil(){if(!modoCfg){st.perfilVisto=true;guardar()}$("#perfil").hidden=true}
 $("#cfg").addEventListener("click",()=>abrirPerfil(true));
@@ -449,6 +546,245 @@ function snap(k,e){
 })();
 const f1=v=>String(Math.round(v*10)/10).replace(".",",");
 const fmtF=d=>`${d.slice(8)}/${d.slice(5,7)}/${d.slice(0,4)}`;
+const fmtT=q=>`${Math.floor(q/60)}:${pad(q%60)}`;
+const etqD=v=>v===0?"Sin temporizador":v<60?`${v} s`:`${Math.floor(v/60)} min${v%60?` ${v%60} s`:""}`;
+$("#pd").innerHTML=[0,30,45,60,90,120,180].map(v=>`<option value="${v}">${etqD(v)}</option>`).join("");
+$("#pd").addEventListener("change",e=>{st.descanso=+e.target.value;guardar();if(!st.descanso)cerrarDescanso()});
+let rEnd=0,rTotal=0,rInt=null,aud=null;
+function audio(){try{aud=aud||new (window.AudioContext||window.webkitAudioContext)();if(aud.state==="suspended")aud.resume();return aud}catch(e){return null}}
+function pitido(){
+  const a=audio();if(!a)return;
+  [0,.28,.56].forEach((d,i)=>{const o=a.createOscillator(),g=a.createGain(),t=a.currentTime+d;
+    o.frequency.value=i===2?1040:880;o.connect(g);g.connect(a.destination);
+    g.gain.setValueAtTime(.0001,t);g.gain.exponentialRampToValueAtTime(.3,t+.02);g.gain.exponentialRampToValueAtTime(.0001,t+.22);
+    o.start(t);o.stop(t+.25)});
+}
+function tick(){
+  const q=Math.ceil((rEnd-Date.now())/1000);
+  if(q<=0){
+    clearInterval(rInt);rInt=null;
+    $("#rl").textContent="Siguiente serie";$("#rn").textContent="¡Listo!";$("#rb").style.width="0%";$("#rest").classList.add("fin");
+    pitido();try{navigator.vibrate&&navigator.vibrate([200,100,200,100,300])}catch(e){}
+    setTimeout(()=>{if(!rInt)cerrarDescanso()},8000);return;
+  }
+  $("#rl").textContent="Descanso";$("#rn").textContent=fmtT(q);$("#rb").style.width=Math.min(100,q/rTotal*100)+"%";
+}
+function arrancar(seg){rTotal=seg;rEnd=Date.now()+seg*1000;$("#rest").hidden=false;$("#rest").classList.remove("fin");document.body.classList.add("conrest");clearInterval(rInt);rInt=setInterval(tick,250);tick()}
+function iniciarDescanso(){if(!st.descanso)return;audio();arrancar(st.descanso)}
+function cerrarDescanso(){clearInterval(rInt);rInt=null;$("#rest").hidden=true;document.body.classList.remove("conrest")}
+function ajustar(d){
+  if(!rInt){if(d>0)arrancar(15);return}
+  rEnd+=d*1000;rTotal=Math.max(1,rTotal+d);tick();
+}
+$("#rmenos").addEventListener("click",()=>ajustar(-15));
+$("#rmas").addEventListener("click",()=>ajustar(15));
+$("#romitir").addEventListener("click",cerrarDescanso);
+let cSel=new Set(),cDia=null;
+function pintarCopia(){
+  const k=wd(parse(sel));
+  $("#cdias").innerHTML=DIAS.map((n,i)=>`<button type="button" class="cd" data-c="${i}" aria-pressed="${cSel.has(i)}" ${i===k?"disabled":""}>${n}</button>`).join("");
+  const re=[...cSel].filter(i=>st.dias[i].ex.length).map(i=>NOMBRES[i]);
+  $("#cinfo").textContent=re.length?`Se reemplazarán los ejercicios de: ${re.join(", ")}.`:"";
+  $("#csi").disabled=!cSel.size;
+}
+function cerrarCopia(){$("#cpanel").hidden=true;cSel=new Set()}
+$("#copiar").addEventListener("click",()=>{cSel=new Set();cDia=sel;$("#cpanel").hidden=false;pintarCopia()});
+$("#cdias").addEventListener("click",e=>{const b=e.target.closest("[data-c]");if(!b||b.disabled)return;const i=+b.dataset.c;cSel.has(i)?cSel.delete(i):cSel.add(i);pintarCopia()});
+$("#cno").addEventListener("click",cerrarCopia);
+$("#csi").addEventListener("click",()=>{
+  const src=planDe(sel);
+  for(const i of cSel)st.dias[i]={foco:src.foco,ex:src.ex.map(x=>({...x,id:uid()}))};
+  const n=cSel.size;cerrarCopia();pintar();avisar(`Copiado a ${n} ${n===1?"día":"días"} de la semana`);
+});
+let drag=null;
+function dragMove(e){
+  if(!drag)return;
+  const y=e.clientY;
+  if(y<90)scrollBy(0,-12);else if(y>innerHeight-90)scrollBy(0,12);
+  const c=[...$("#lista").querySelectorAll(".ex")].find(c=>{if(c===drag.card)return false;const r=c.getBoundingClientRect();return y>=r.top&&y<=r.bottom});
+  if(!c)return;
+  const r=c.getBoundingClientRect(),mid=r.top+r.height/2;
+  const sigue=drag.card.compareDocumentPosition(c)&Node.DOCUMENT_POSITION_FOLLOWING;
+  if(sigue&&y>mid)c.after(drag.card);else if(!sigue&&y<mid)c.before(drag.card);
+}
+function dragEnd(){
+  if(!drag)return;
+  document.removeEventListener("pointermove",dragMove);document.removeEventListener("pointerup",dragEnd);document.removeEventListener("pointercancel",dragEnd);
+  const ids=[...$("#lista").querySelectorAll(".ex[data-id]")].map(c=>c.dataset.id),dia=planDe(sel);
+  drag=null;dia.ex=ids.map(i=>dia.ex.find(x=>x.id===i)).filter(Boolean);pintar();
+}
+$("#lista").addEventListener("pointerdown",e=>{
+  const g=e.target.closest(".grip");if(!g)return;
+  e.preventDefault();drag={card:g.closest(".ex")};drag.card.classList.add("arr");
+  document.addEventListener("pointermove",dragMove);document.addEventListener("pointerup",dragEnd);document.addEventListener("pointercancel",dragEnd);
+});
+$("#lista").addEventListener("keydown",e=>{
+  const g=e.target.closest(".grip");if(!g)return;
+  const d=e.key==="ArrowUp"?-1:e.key==="ArrowDown"?1:0;if(!d)return;
+  e.preventDefault();
+  const dia=planDe(sel),id=g.closest(".ex").dataset.id,i=dia.ex.findIndex(x=>x.id===id),j=i+d;
+  if(j<0||j>=dia.ex.length)return;
+  [dia.ex[i],dia.ex[j]]=[dia.ex[j],dia.ex[i]];pintar();
+  const n=document.querySelector(`.ex[data-id="${id}"] .grip`);if(n)n.focus();
+});
+const hexA=u=>[...u].map(b=>b.toString(16).padStart(2,"0")).join("");
+const nuevaSal=()=>hexA(crypto.getRandomValues(new Uint8Array(16)));
+async function hashPw(pw,sal){
+  const enc=new TextEncoder(),sb=new Uint8Array(sal.match(/../g).map(h=>parseInt(h,16)));
+  if(window.crypto&&crypto.subtle){
+    const k=await crypto.subtle.importKey("raw",enc.encode(pw),"PBKDF2",false,["deriveBits"]);
+    return hexA(new Uint8Array(await crypto.subtle.deriveBits({name:"PBKDF2",salt:sb,iterations:100000,hash:"SHA-256"},k,256)));
+  }
+  let h=5381;for(const c of sal+pw)h=((h<<5)+h+c.charCodeAt(0))>>>0;return"f"+h.toString(16);
+}
+const K=()=>FIREBASE_CONFIG.apiKey;
+const AU="https://identitytoolkit.googleapis.com/v1/accounts:";
+async function fb(url,body,t,metodo){
+  const r=await fetch(url,{method:metodo||(body?"POST":"GET"),headers:{"Content-Type":"application/json",...(t?{Authorization:"Bearer "+t}:{})},body:body?JSON.stringify(body):undefined});
+  const j=await r.json().catch(()=>({}));
+  if(!r.ok){const m=(j.error&&j.error.message)||"";const e=new Error(m);e.code=m;e.status=r.status;throw e}
+  return j;
+}
+const ERR=[["EMAIL_EXISTS","Ese correo ya está registrado. Inicia sesión."],["INVALID_LOGIN_CREDENTIALS","Correo o contraseña incorrectos."],["INVALID_PASSWORD","Correo o contraseña incorrectos."],["EMAIL_NOT_FOUND","Correo o contraseña incorrectos."],["WEAK_PASSWORD","La contraseña es muy débil (mínimo 6 caracteres)."],["INVALID_EMAIL","Escribe un correo válido."],["TOO_MANY_ATTEMPTS","Demasiados intentos. Inténtalo más tarde."],["USER_DISABLED","Esta cuenta está deshabilitada."],["OPERATION_NOT_ALLOWED","El acceso con correo no está activado en Firebase."],["CREDENTIAL_TOO_OLD","Por seguridad, cierra sesión, vuelve a entrar e inténtalo otra vez."],["API_KEY","La clave de Firebase no es válida. Revisa firebase-config.js."]];
+function errTxt(e){
+  if(!e||!e.status)return"Sin conexión. Revisa tu internet e inténtalo de nuevo.";
+  const c=String(e.code||""),h=ERR.find(([k])=>c.includes(k));
+  return h?h[1]:`No se pudo completar la operación (${c||e.status}).`;
+}
+const msgSync=e=>!e||!e.status?"Sin conexión: se sincronizará luego":e.status===403?"Firestore rechazó el acceso: revisa las reglas":`Error de sincronización (${e.status})`;
+let tok=null;
+const guardarCuenta=()=>{try{localStorage.setItem(CK,JSON.stringify(cuenta))}catch(e){}};
+async function token(){
+  if(tok&&Date.now()<tok.exp-60000)return tok.id;
+  const r=await fetch(`https://securetoken.googleapis.com/v1/token?key=${K()}`,{method:"POST",headers:{"Content-Type":"application/x-www-form-urlencoded"},body:`grant_type=refresh_token&refresh_token=${encodeURIComponent(cuenta.refresh)}`});
+  const j=await r.json().catch(()=>({}));
+  if(!r.ok){const m=(j.error&&j.error.message)||"";const e=new Error(m);e.code=m;e.status=r.status;throw e}
+  tok={id:j.id_token,exp:Date.now()+(+j.expires_in||3600)*1000};
+  if(j.refresh_token&&j.refresh_token!==cuenta.refresh){cuenta.refresh=j.refresh_token;guardarCuenta()}
+  return tok.id;
+}
+const FS=()=>`https://firestore.googleapis.com/v1/projects/${FIREBASE_CONFIG.projectId}/databases/(default)/documents/usuarios/${cuenta.uid}`;
+function lineaCuenta(){const c=$("#cuenta");if(!c)return;c.textContent=cuenta?`Cuenta: ${cuenta.nombre?cuenta.nombre+" · ":""}${cuenta.email}`+(NUBE&&nubeMsg?` · ${nubeMsg}`:""):""}
+function estadoNube(m){nubeMsg=m;lineaCuenta()}
+function programarSubida(){sinSubir=true;clearTimeout(subT);subT=setTimeout(subirNube,1500);estadoNube("Guardando…")}
+async function subirNube(){
+  clearTimeout(subT);subT=null;
+  if(!NUBE||!autenticado||!cuenta||!cuenta.uid)return;
+  try{
+    const t=await token();
+    if(!st.mod){st.mod=Date.now();persistir()}
+    await fb(FS()+"?updateMask.fieldPaths=datos&updateMask.fieldPaths=mod",{fields:{datos:{stringValue:payloadJson()},mod:{integerValue:String(st.mod)}}},t,"PATCH");
+    sinSubir=false;estadoNube("Sincronizado");
+  }catch(e){sinSubir=true;estadoNube(msgSync(e))}
+}
+function aplicarDatos(d,mod){
+  st.dias=d.dias;st.log=d.log||{};st.perfil=d.perfil||null;st.perfilVisto=!!d.perfilVisto;st.pesos=d.pesos||{};st.hist=d.hist||{};st.descanso=d.descanso??90;st.mod=mod;
+  if(d.nombre&&cuenta&&!cuenta.nombre){cuenta.nombre=d.nombre;guardarCuenta()}
+  ultimo=payloadJson();st.owner=cuenta.uid;persistir();pintar();
+}
+async function bajarNube(){
+  const t=await token();
+  let doc=null;
+  try{doc=await fb(FS(),null,t)}catch(e){if(e.status!==404)throw e}
+  const f=doc&&doc.fields;
+  if(f&&f.datos){
+    const mod=+((f.mod&&f.mod.integerValue)||0),d=JSON.parse(f.datos.stringValue);
+    if(st.owner!==cuenta.uid||mod>(st.mod||0)){aplicarDatos(d,mod);sinSubir=false;estadoNube("Sincronizado")}
+    else if((st.mod||0)>mod)await subirNube();
+    else estadoNube("Sincronizado");
+  }else await subirNube();
+  st.owner=cuenta.uid;persistir();
+}
+async function accederNube(reg,em,pw,nombre){
+  const r=await fb(`${AU}${reg?"signUp":"signInWithPassword"}?key=${K()}`,{email:em,password:pw,returnSecureToken:true});
+  tok={id:r.idToken,exp:Date.now()+(+r.expiresIn||3600)*1000};
+  if(st.owner&&st.owner!==r.localId){Object.assign(st,vacio());ultimo=null}
+  cuenta={email:em,uid:r.localId,refresh:r.refreshToken,nombre:nombre||""};
+  guardarCuenta();autenticado=true;
+  try{localStorage.setItem(SK,"1");localStorage.setItem("rutina-gym-tuvo","1")}catch(e){}
+  try{await bajarNube()}catch(e){sinSubir=true;nubeMsg=msgSync(e)}
+}
+async function salirNube(subir){
+  if(subir&&sinSubir){await subirNube();if(sinSubir){avisar("No se pudo sincronizar. Conéctate a internet antes de cerrar sesión para no perder datos.");return}}
+  try{[CK,SK,KEY].forEach(k=>localStorage.removeItem(k))}catch(e){}
+  location.reload();
+}
+async function borrarNube(){
+  try{
+    const t=await token();
+    try{await fb(FS(),null,t,"DELETE")}catch(e){if(e.status!==404)throw e}
+    await fb(`${AU}delete?key=${K()}`,{idToken:t});
+    try{[CK,SK,KEY,"rutina-gym-tuvo"].forEach(k=>localStorage.removeItem(k))}catch(e){}
+    location.reload();
+  }catch(e){avisar(errTxt(e))}
+}
+let gmodo="reg";
+function mostrarGate(m){
+  gmodo=m||(NUBE?(localStorage.getItem("rutina-gym-tuvo")?"login":"reg"):(cuenta?"login":"reg"));
+  const reg=gmodo==="reg";
+  $("#gtit").textContent=reg?"Crea tu cuenta":"Bienvenido de nuevo";
+  $("#gsub").textContent=reg?(NUBE?"Regístrate para guardar tu rutina y tu progreso en la nube y usarlos en cualquier dispositivo.":"Regístrate para guardar tu rutina y tu progreso en este dispositivo."):`Inicia sesión para continuar${!NUBE&&cuenta&&cuenta.nombre?", "+cuenta.nombre:""}.`;
+  $("#gnl").hidden=!reg;$("#gcl").hidden=!reg;$("#gol").hidden=reg;$("#golt").hidden=true;
+  $("#gloc").hidden=NUBE;$("#gnub").hidden=!NUBE;
+  $("#gcambio").hidden=!NUBE;$("#gcambio").textContent=reg?"Ya tengo cuenta: iniciar sesión":"No tengo cuenta: registrarme";
+  $("#gok").textContent=reg?"Registrarme":"Iniciar sesión";
+  $("#gp").autocomplete=reg?"new-password":"current-password";
+  $("#gerr").textContent="";$("#gmsg").textContent="";$("#gate").hidden=false;
+  (reg?$("#gn"):$("#ge")).focus();
+}
+function entrar(){
+  autenticado=true;try{localStorage.setItem(SK,"1")}catch(e){}
+  $("#gp").value="";$("#gc").value="";$("#gate").hidden=true;
+  guardar();pintar();lineaCuenta();
+  if(!st.perfil&&!st.perfilVisto)abrirPerfil(false);
+}
+$("#gform").addEventListener("submit",async e=>{
+  e.preventDefault();
+  const err=m=>{$("#gerr").textContent=m};
+  const em=$("#ge").value.trim().toLowerCase(),pw=$("#gp").value,reg=NUBE?gmodo==="reg":!cuenta,n=$("#gn").value.trim();
+  if(reg){
+    if(!n)return err("Escribe tu nombre.");
+    if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(em))return err("Escribe un correo válido.");
+    if(pw.length<6)return err("La contraseña debe tener al menos 6 caracteres.");
+    if(pw!==$("#gc").value)return err("Las contraseñas no coinciden.");
+  }
+  if(NUBE){
+    if(!em||!pw)return err("Escribe tu correo y tu contraseña.");
+    const b=$("#gok"),et=b.textContent;b.disabled=true;b.textContent="Conectando…";err("");
+    try{await accederNube(reg,em,pw,n)}catch(x){err(errTxt(x));b.disabled=false;b.textContent=et;return}
+    b.disabled=false;b.textContent=et;
+  }else if(reg){
+    const sal=nuevaSal(),nueva={nombre:n,email:em,salt:sal,hash:await hashPw(pw,sal)};
+    try{localStorage.setItem(CK,JSON.stringify(nueva))}catch(x){return err("No se pudo guardar la cuenta en este dispositivo.")}
+    cuenta=nueva;
+  }else if(em!==cuenta.email||await hashPw(pw,cuenta.salt)!==cuenta.hash){
+    return err("Correo o contraseña incorrectos.");
+  }
+  entrar();
+});
+$("#gcambio").addEventListener("click",()=>mostrarGate(gmodo==="reg"?"login":"reg"));
+$("#greset").addEventListener("click",async()=>{
+  const em=$("#ge").value.trim().toLowerCase(),m=$("#gmsg");
+  if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(em)){m.textContent="Escribe tu correo arriba y vuelve a tocar el botón.";return}
+  try{await fb(`${AU}sendOobCode?key=${K()}`,{requestType:"PASSWORD_RESET",email:em})}catch(x){if(!String(x.code).includes("EMAIL_NOT_FOUND")){m.textContent=errTxt(x);return}}
+  m.textContent="Si existe una cuenta con ese correo, recibirás un mensaje para crear una nueva contraseña.";
+});
+$("#golv").addEventListener("click",()=>{$("#golt").hidden=!$("#golt").hidden});
+function dobleToque(btn,etq,fn){
+  let t=null;
+  btn.addEventListener("click",()=>{
+    if(!t){btn.textContent="¿Seguro? Toca de nuevo";t=setTimeout(()=>{t=null;btn.textContent=etq},4000);return}
+    clearTimeout(t);t=null;btn.textContent=etq;fn();
+  });
+}
+const borrarTodo=()=>{try{[CK,SK,KEY].forEach(k=>localStorage.removeItem(k))}catch(e){}location.reload()};
+dobleToque($("#borrar"),"Borrar cuenta y datos",NUBE?borrarNube:borrarTodo);
+dobleToque($("#gborra"),"Borrar cuenta y datos de este dispositivo",borrarTodo);
+$("#salir").addEventListener("click",()=>{
+  if(NUBE){salirNube(true);return}
+  autenticado=false;try{localStorage.removeItem(SK)}catch(e){}
+  $("#perfil").hidden=true;$("#evo").hidden=true;cerrarDescanso();mostrarGate();
+});
 let evoEx=null;
 function grafico(vals,labs,tipo){
   const W=300,H=140,pl=16,pr=16,pt=22,pb=22,n=vals.length,nn=vals.filter(v=>v!=null);
@@ -513,7 +849,17 @@ $("#evo").addEventListener("click",e=>{
 $("#evo").addEventListener("change",e=>{if(e.target.id==="evoSel"){evoEx=e.target.value;renderEvo()}});
 document.addEventListener("keydown",e=>{if(e.key==="Escape")$("#evo").hidden=true});
 pintar();
-if(!st.perfil&&!st.perfilVisto)abrirPerfil(false);
+async function arrancarNube(){
+  try{await bajarNube()}
+  catch(e){
+    if(/TOKEN_EXPIRED|INVALID_REFRESH_TOKEN|USER_DISABLED|USER_NOT_FOUND/.test(String(e.code||"")))return salirNube(false);
+    estadoNube(msgSync(e));
+  }
+}
+addEventListener("online",()=>{if(NUBE&&autenticado&&sinSubir)subirNube()});
+document.addEventListener("visibilitychange",()=>{if(document.hidden&&NUBE&&autenticado&&subT)subirNube()});
+if(!autenticado)mostrarGate();
+else{if(!st.perfil&&!st.perfilVisto)abrirPerfil(false);if(NUBE)arrancarNube()}
 </script>
 </body>
 </html>
