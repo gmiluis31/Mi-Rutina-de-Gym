@@ -41,3 +41,23 @@ npx cap open android
 3. Cuando termine, abre la ejecución y descarga **mi-rutina-gym-apk** (viene dentro de un zip con `app-debug.apk`).
 4. Pasa el APK al móvil, ábrelo y permite "instalar apps de orígenes desconocidos" cuando te lo pida.
 Este APK es de prueba (firma de depuración): sirve para instalarlo tú, no para subirlo a Google Play. Para Play usa el .aab firmado de la sección anterior.
+
+## Actualizar la app sin perder tus datos
+- Los datos viven en el dispositivo: si desinstalas la app, Android los borra.
+- Firma fija: sube también la carpeta `ci/` (con `debug.keystore`) a tu repositorio y usa el flujo `.github/workflows/build-apk.yml` actualizado. Así cada APK nuevo se puede instalar encima del anterior sin desinstalar. Si tu repositorio es público, considera hacerlo privado.
+
+## Cuentas y datos en la nube con Firebase
+La app usa Firebase Authentication (correo y contraseña) y Firestore. Cada persona solo puede leer y escribir sus propios datos.
+
+1. Entra a console.firebase.google.com y crea un proyecto (puedes desactivar Google Analytics).
+2. **Compilación → Authentication → Comenzar → Correo electrónico/contraseña → Habilitar.**
+3. **Compilación → Firestore Database → Crear base de datos** (modo producción, elige una región cercana).
+4. En Firestore, pestaña **Reglas**: pega el contenido de `firestore.rules` y pulsa **Publicar**.
+5. **Configuración del proyecto (⚙) → Tus apps → icono Web `</>`** → registra una app (cualquier nombre). Copia `apiKey` y `projectId`.
+6. Pega esos dos valores en `www/firebase-config.js` y sube el archivo a tu repositorio (reemplaza el que hay).
+7. Ejecuta **Actions → Compilar APK**. No restrinjas la clave de API a "apps Android" en Google Cloud, porque la app usa WebView.
+
+Notas:
+- Sin conexión la app funciona con la copia local y sincroniza al volver internet. No dejará cerrar sesión si hay cambios sin sincronizar.
+- La vista previa publicada en Claude bloquea conexiones externas, por eso allí la app usa la cuenta local; Firebase funciona en el APK.
+- Al cerrar sesión se borra la copia local del dispositivo (los datos siguen en la nube).
